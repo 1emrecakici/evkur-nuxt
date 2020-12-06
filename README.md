@@ -1,4 +1,4 @@
-# evkur-nuxt
+# nuxt-evkur1
 
 ## Build Setup
 
