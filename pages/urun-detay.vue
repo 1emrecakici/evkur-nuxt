@@ -108,7 +108,7 @@
       </div>
       <div class="product-info">
         <h1 class="name">
-          <span> Trident A23 Max 64GB Siyah Akıllı Telefon </span>
+          <span> {{product}}</span>
         </h1>
         <div class="rating">
           <div class="stars" data-rating="0">
@@ -1085,3 +1085,17 @@
     </div>
   </section>
 </template>
+
+<script>
+import { mapGetters, mapActions } from 'vuex'
+export default {
+  name: 'app',
+  computed: mapGetters({
+    products: 'allProducts',
+    length: 'getNumberOfProducts'
+  }),
+  methods: mapActions([
+    'addToCart'
+  ])
+}
+</script>
