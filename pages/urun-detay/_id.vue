@@ -4,29 +4,29 @@
       <div class="product-info mobile">
         <div class="product-code">Ürün Kodu: TR-A23 MAX-BLACK</div>
         <h1 class="name">
-          <span> Trident A23 Max 64GB Siyah Akıllı Telefon </span>
+          <span> {{ product.title }} </span>
         </h1>
         <div class="rating">
           <div class="stars" data-rating="0">
             <div class="star">
-              <img src="../assets/Icons/star-icon.png" />
-              <img class="active" src="../assets/Icons/active-star-icon.png" />
+              <img src="../../static/Icons/star-icon.png" />
+              <img class="active" src="../../static/Icons/active-star-icon.png" />
             </div>
             <div class="star">
-              <img src="../assets/Icons/star-icon.png" />
-              <img class="active" src="../assets/Icons/active-star-icon.png" />
+              <img src="../../static/Icons/star-icon.png" />
+              <img class="active" src="../../static/Icons/active-star-icon.png" />
             </div>
             <div class="star">
-              <img src="../assets/Icons/star-icon.png" />
-              <img class="active" src="../assets/Icons/active-star-icon.png" />
+              <img src="../../static/Icons/star-icon.png" />
+              <img class="active" src="../../static/Icons/active-star-icon.png" />
             </div>
             <div class="star">
-              <img src="../assets/Icons/star-icon.png" />
-              <img class="active" src="../assets/Icons/active-star-icon.png" />
+              <img src="../../static/Icons/star-icon.png" />
+              <img class="active" src="../../static/Icons/active-star-icon.png" />
             </div>
             <div class="star">
-              <img src="../assets/Icons/star-icon.png" />
-              <img class="active" src="../assets/Icons/active-star-icon.png" />
+              <img src="../../static/Icons/star-icon.png" />
+              <img class="active" src="../../static/Icons/active-star-icon.png" />
             </div>
           </div>
 
@@ -108,29 +108,29 @@
       </div>
       <div class="product-info">
         <h1 class="name">
-          <span> {{product}}</span>
+          <span>{{ product.title }}</span>
         </h1>
         <div class="rating">
           <div class="stars" data-rating="0">
             <div class="star">
-              <img src="../assets/Icons/star-icon.png" />
-              <img class="active" src="../assets/Icons/active-star-icon.png" />
+              <img src="../../static/Icons/star-icon.png" />
+              <img class="active" src="../../static/Icons/active-star-icon.png" />
             </div>
             <div class="star">
-              <img src="../assets/Icons/star-icon.png" />
-              <img class="active" src="../assets/Icons/active-star-icon.png" />
+              <img src="../../static/Icons/star-icon.png" />
+              <img class="active" src="../../static/Icons/active-star-icon.png" />
             </div>
             <div class="star">
-              <img src="../assets/Icons/star-icon.png" />
-              <img class="active" src="../assets/Icons/active-star-icon.png" />
+              <img src="../../static/Icons/star-icon.png" />
+              <img class="active" src="../../static/Icons/active-star-icon.png" />
             </div>
             <div class="star">
-              <img src="../assets/Icons/star-icon.png" />
-              <img class="active" src="../assets/Icons/active-star-icon.png" />
+              <img src="../../static/Icons/star-icon.png" />
+              <img class="active" src="../../static/Icons/active-star-icon.png" />
             </div>
             <div class="star">
-              <img src="../assets/Icons/star-icon.png" />
-              <img class="active" src="../assets/Icons/active-star-icon.png" />
+              <img src="../../static/Icons/star-icon.png" />
+              <img class="active" src="../../static/Icons/active-star-icon.png" />
             </div>
           </div>
 
@@ -160,13 +160,9 @@
           </div>
           <div class="group-products">
             <div class="title">Renk</div>
-            <a href="/trident-a23-max-64gb-beyaz-akilli-telefon" class="item">
-              Beyaz
-            </a>
-            <a href="javascript:void(0)" class="item selected"> Siyah </a>
-            <a href="/trident-a23-max-64gb-mavi-akilli-telefon" class="item">
-              Mavi
-            </a>
+            <a @click="color = 'beyaz'" href="javascript:void(0)" class="item" :class="color === 'beyaz' ? 'selected' : ''">Beyaz</a>
+            <a @click="color = 'siyah'" href="javascript:void(0)" class="item" :class="color === 'siyah' ? 'selected' : ''"> Siyah </a>
+            <a @click="color = 'mavi'" href="javascript:void(0)" class="item" :class="color === 'mavi' ? 'selected' : ''">Mavi</a>
           </div>
 
           <div class="product-actions">
@@ -196,12 +192,12 @@
                 data-max="1"
                 data-value="1"
               >
-                <a href="javascript:void(0)" class="minus"> - </a>
+                <a href="javascript:void(0)" @click="decsreaseCount()" class="minus"> - </a>
                 <span>
-                  <span> 1 </span>
+                  <span> {{ count }} </span>
                   Adet
                 </span>
-                <a href="javascript:void(0)" class="plus"> + </a>
+                <a href="javascript:void(0)" @click="count++" class="plus"> + </a>
                 <input
                   type="hidden"
                   name="Quantity"
@@ -213,6 +209,7 @@
                 href="javascript:void(0)"
                 class="button red add-to-cart-button submit-button"
                 data-lb-action="buy"
+                @click="addBasket"
               >
                 <span>SEPETE EKLE</span>
               </a>
@@ -228,7 +225,7 @@
                 novalidate="novalidate"
               >
                 <img
-                  src="../assets/Icons/product-favorite-icon.png"
+                  src="../../static/Icons/product-favorite-icon.png"
                   class="submit-button"
                 />
                 <span class="submit-button"> Favorilerime Ekle </span>
@@ -245,7 +242,7 @@
                 novalidate="novalidate"
               >
                 <img
-                  src="../assets/Icons/product-compare-icon.png"
+                  src="../../static/Icons/product-compare-icon.png"
                   class="submit-button"
                 />
                 <span class="submit-button">
@@ -256,7 +253,7 @@
               </form>
             </div>
             <a href="javascript:void(0)" class="sub-action sub-action-share">
-              <img src="../assets/Icons/product-share-icon.png" alt="share" />
+              <img src="../../static/Icons/product-share-icon.png" alt="share" />
               <span> Paylaş </span>
             </a>
             <div class="sub-action sub-action-pricealert">
@@ -268,7 +265,7 @@
                 novalidate="novalidate"
               >
                 <img
-                  src="../assets/Icons/product-price-alarm-icon.png"
+                  src="../../static/Icons/product-price-alarm-icon.png"
                   class="submit-button"
                 />
                 <span class="submit-button"> Fiyatı düşünce haber ver </span>
@@ -1087,15 +1084,39 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'app',
-  computed: mapGetters({
-    products: 'allProducts',
-    length: 'getNumberOfProducts'
-  }),
-  methods: mapActions([
-    'addToCart'
-  ])
+  data: () => {
+    return {
+      count: 1,
+      color: 'beyaz'
+    };
+  },
+  created() {
+    const id = this.$route.params.id;
+    this.$store.dispatch("product/initData");
+    this.$store.dispatch("product/setProduct", parseInt(id));
+  },
+  computed: {
+    product(){
+      return this.$store.getters['product/getProduct'];
+    }
+  },
+  methods: {
+    decsreaseCount(){
+      if (this.count > 1) {
+        this.count--;
+      }
+    },
+    addBasket() {
+      const payload = {
+        id: Math.random() * 1000,
+        count: this.count,
+        color: this.color,
+        product: this.product
+      };
+      this.$store.dispatch('basket/addBasket', payload);
+    }
+  }
 }
 </script>
