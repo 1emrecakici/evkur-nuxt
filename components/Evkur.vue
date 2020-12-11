@@ -4,11 +4,11 @@
       <span></span>
     </a>
     <div class="logo">
-      <a href="/" title="Evkur">
+      <nuxt-link to="/" title="Evkur">
         <h1>
           <img src="../assets/logo.png" alt="Evkur" />
         </h1>
-      </a>
+      </nuxt-link>
     </div>
     <div class="search">
       <form
@@ -205,10 +205,10 @@
       </form>
     </div>
     <div class="buttons ins-header-button-wrapper-c122">
-      <a href="/uye-girisi" class="button with-border with-icon">
+      <nuxt-link to="/uye-girisi" class="button with-border with-icon">
         <img src="../assets/user-icon.png" />
         <span>GİRİŞ YAP / ÜYE OL</span>
-      </a>
+      </nuxt-link>
 
       <nuxt-link
         to="/sepetim"

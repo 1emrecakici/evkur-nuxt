@@ -4,6 +4,7 @@
     "title": "Trident A23 Max 64GB Siyah Akıllı Telefon",
     "image": "https://cdn.evkur.com.tr/c/Product/thumbs/trident-a23-siyah_po6c1y_1920.jpg",
     "price": 1999.99,
+    "oldprice":2500.99,
     "category": [
       "samsung-cep-telefonlari",
       "cep-telefonlari"
@@ -24,8 +25,9 @@
   {
     "id": 2,
     "title": "Samsung Galaxy S20 Ultra 128GB Gri Akıllı Telefon",
-    "image": "https://cdn.evkur.com.tr/c/Product/thumbs/trident-a23-siyah_po6c1y_1920.jpg",
+    "image": "https://cdn.evkur.com.tr/c/Product/thumbs/galaxy-note-20-ultra-siyah-01_yw1n3q_250.jpg",
     "price": 1999.99,
+    "oldprice":2500.99,
     "category": [
       "samsung-cep-telefonlari",
       "cep-telefonlari"

@@ -42,26 +42,10 @@
           style="position: relative; overflow: hidden"
         >
           <img
-            src="https://cdn.evkur.com.tr/c/Product/thumbs/trident-a23-siyah_po6c1y_500.jpg"
+            :src="product.image"
             alt="Trident A23 Max 64GB Siyah Akıllı Telefon"
           />
-          <img
-            role="presentation"
-            alt=""
-            src="https://cdn.evkur.com.tr/c/Product/thumbs/trident-a23-siyah_po6c1y_1920.jpg"
-            class="zoomImg"
-            style="
-              position: absolute;
-              top: 0px;
-              left: 0px;
-              opacity: 0;
-              width: 1920px;
-              height: 1920px;
-              border: none;
-              max-width: none;
-              max-height: none;
-            "
-          />
+          
         </div>
         <div class="items">
           <a
@@ -70,7 +54,7 @@
             data-zoom-image="https://cdn.evkur.com.tr/c/Product/thumbs/trident-a23-siyah_po6c1y_1920.jpg"
           >
             <img
-              src="https://cdn.evkur.com.tr/c/Product/thumbs/trident-a23-siyah_po6c1y_500.jpg"
+              :src="product.image"
               alt="Trident A23 Max 64GB Siyah Akıllı Telefon"
             />
           </a>

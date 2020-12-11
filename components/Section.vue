@@ -64,26 +64,26 @@ export default {
       sliders: [
         {
           big: "https://cdn.evkur.com.tr/c/Cms/oppo-reno4-1210x372px_gs6q5f.jpg",
-          small: "https://cdn.evkur.com.tr/c/Cms/thumbnail_bq0i6a.png"
-        },
-        {
-          big: "https://cdn.evkur.com.tr/c/Cms/oppo-reno4-1210x372px_gs6q5f.jpg",
-          small: "https://cdn.evkur.com.tr/c/Cms/thumbnail_bq0i6a.png"
-        },
-        {
-          big: "https://cdn.evkur.com.tr/c/Cms/oppo-reno4-1210x372px_gs6q5f.jpg",
-          small: "https://cdn.evkur.com.tr/c/Cms/thumbnail_bq0i6a.png"
-        },
-        {
-          big: "https://cdn.evkur.com.tr/c/Cms/oppo-reno4-1210x372px_gs6q5f.jpg",
-          small: "https://cdn.evkur.com.tr/c/Cms/thumbnail_bq0i6a.png"
+          small: "https://cdn.evkur.com.tr/c/Cms/thumbnail_n1xlz6.jpg"
         },
         {
           big: "https://cdn.evkur.com.tr/c/Cms/uzaktan-egitim-1210x372px_y6r2nn.jpg",
-          small: "https://cdn.evkur.com.tr/c/Cms/thumbnail_bq0i6a.png"
+          small: "https://cdn.evkur.com.tr/c/Cms/thumbnail_z0eac6.jpg"
         },
         {
-          big: "https://cdn.evkur.com.tr/c/Cms/samsun-beyaz-esyalar-1210x372px_q7m5gi.jpg",
+          big: "https://cdn.evkur.com.tr/c/Cms/trident-akilli-robot-1210x372_tq9e3l.jpg",
+          small: "https://cdn.evkur.com.tr/c/Cms/thumb_n3fgk1.jpg"
+        },
+        {
+          big: "https://cdn.evkur.com.tr/c/Cms/trident-akilli-robot-1210x372_tq9e3l.jpg",
+          small: "https://cdn.evkur.com.tr/c/Cms/thumbnail_lr94wc.png"
+        },
+        {
+          big: "https://cdn.evkur.com.tr/c/Cms/dji-mavic-drone-1210x372px_b5p1qy.jpg",
+          small: "https://cdn.evkur.com.tr/c/Cms/dji-mavic-dronelar-207x70-thumb_k4n0lr.jpg"
+        },
+        {
+          big: "https://cdn.evkur.com.tr/c/Cms/galaxy-z-flip-1210x372px_e2n7tb.jpg",
           small: "https://cdn.evkur.com.tr/c/Cms/thumbnail_bq0i6a.png"
         },
         {
@@ -91,7 +91,7 @@ export default {
           small: "https://cdn.evkur.com.tr/c/Cms/thumbnail_g9w1nx.png"
         },
         {
-          big: "https://cdn.evkur.com.tr/c/Cms/samsun-beyaz-esyalar-1210x372px_q7m5gi.jpg",
+          big: "https://cdn.evkur.com.tr/c/Cms/aracsatis-desktop3_j9x8jr.png",
           small: "https://cdn.evkur.com.tr/c/Cms/aracsatis-thumb_wp93ln.png"
         },
       ],

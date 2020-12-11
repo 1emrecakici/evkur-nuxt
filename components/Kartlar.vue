@@ -73,7 +73,7 @@
           class="nsnKutucuk ceptel onCK accld"
         >
           <a
-            href="https://www.evkur.com.tr/cep-telefonlari?ajax=true&amp;specificationValueIds=47451&amp;banner=kmpcuma2019"
+            href="/urun-detay/1"
             style="background-color: rgb(255, 255, 255)"
           >
             <div class="imgBitis" style="height: 415.531px"></div>
