@@ -19,7 +19,6 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '~/plugins/vuex-persist', ssr: false },
-    '~/plugins/firebase.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -31,6 +30,25 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyAehBUAYdoLX1ig70qShsAmg4h7enW0f1M",
+          authDomain: "evkur-nuxt.firebaseapp.com",
+          projectId: "evkur-nuxt",
+          storageBucket: "evkur-nuxt.appspot.com",
+          messagingSenderId: "893886173970",
+          appId: "1:893886173970:web:f9fc853dd1138c7f4799cb",
+          measurementId: "G-SEEE210R32"
+        },
+        services: {
+          firestore: true,
+          auth: true
+        }
+      },
+      '@nuxtjs/pwa'
+    ],
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
