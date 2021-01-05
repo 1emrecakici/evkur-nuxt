@@ -205,7 +205,7 @@
       </form>
     </div>
     <div class="buttons ins-header-button-wrapper-c122">
-      <nuxt-link to="/uye-girisi" class="button with-border with-icon">
+      <nuxt-link to="/girisyap" class="button with-border with-icon">
         <img src="../assets/user-icon.png" />
         <span>GİRİŞ YAP / ÜYE OL</span>
       </nuxt-link>

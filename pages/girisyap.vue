@@ -1,65 +1,20 @@
 <template>
-  <div id="login-register">
-    <div class="lr-title">
-      <h1>Merhaba,</h1>
-      <h3>Trendyol’a giriş yap veya hesap oluştur, indirimleri kaçırma!</h3>
-    </div>
-    <div class="q-layout lr-header">
-      <div class="flex-center header-buttons">
-        <button
-          class="q-secondary q-button-medium q-button tab button mr-5 left"
-          :class="isLogin ? 'active' : ''"
-          @click="isLogin = true"
-        >
-          <span>Giriş Yap</span></button
-        ><button
-        class="q-secondary q-button-medium q-button tab button right"
-        :class="isLogin ? '' : 'active'"
-        @click="isLogin = false"
-      >
-        <span>Üye Ol</span>
-      </button>
-      </div>
-    </div>
-    <div class="lr-container">
-      <Login v-if="isLogin === true" />
-      <Register v-if="isLogin === false" />
-      <div class="social-account-login-buttons">
-        <div class="q-layout social-login-button flex flex-1">
-          <div
-            class="social-login-icon"
-            style="background-color: rgb(76, 110, 168)"
-          >
-            <i class="q-icon icon-facebook i-facebook"></i>
-          </div>
-          <div class="flex flex-column">
-            <div>
-              <div style="text-transform: capitalize">facebook</div>
-              <small>ile kaydol</small>
-            </div>
-          </div>
+    <section class="form-section">
+    <div class="container">
+        <div class="form login-form">
+            <form action="/uye-girisi" method="post" class="validate" novalidate="novalidate">
+                <input name="__RequestVerificationToken" type="hidden" value="4xky5t8POaQTaa8NLL6wrw6y4Odofn-EfxkNkqarK_hRDWwdfK4mgeyexty6P2YmceurV8dW6-BXzjvVao48wBRDPj8wOdI-jJ7UfmToPAk1">
+                <Login v-if="isLogin === true"  />
+                <Register />
+                <input type="hidden" name="returnUrl">
+                <input type="hidden" name="showGuestButton" value="0">
+            </form>
         </div>
-        <div class="q-layout social-login-button flex flex-1">
-          <div
-            class="social-login-icon"
-            style="background-color: rgb(241, 66, 54)"
-          >
-            <i class="q-icon icon-google i-google"></i>
-          </div>
-          <div class="flex flex-column">
-            <div>
-              <div style="text-transform: capitalize">google</div>
-              <small>ile kaydol</small>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+</section>
 </template>
 
 <script>
-import '~/assets/pages/auth.css';
 import Login from "@/components/Auth/Login";
 import Register from "@/components/Auth/Register";
 
@@ -72,7 +27,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-
-</style>

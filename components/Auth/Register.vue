@@ -1,134 +1,145 @@
 <template>
-    <div class="q-layout register">
-        <form @submit="register">
-            <div class="q-input-wrapper email-input">
-                <label class="q-label">E-Posta</label
-                ><input
-                id="register-email"
-                class="q-input"
-                data-testid="email-input"
-                list="email-list"
-                name="register email"
-                type="email"
-                v-model="form.email"
-            />
+  <section class="form-section">
+    <div class="container">
+      <div class="form register-form">
+        <form
+          @submit="register"
+          action="/uye-ol"
+          method="post"
+          class="validate"
+          novalidate="novalidate"
+        >
+          <input
+            name="__RequestVerificationToken"
+            type="hidden"
+            value="PsQOMc2Cn4mdkApiZnjvVBTI3dEQYunoTDR51Ep33BKPGNf-v7EAen3TDxWet38derO-X6qYZRK5736D30d7kT0ob_jmpwwnIWJqK1g9y1k1"
+          />
+          <div class="form-title">Yeni Üyelik Oluşturma</div>
+          <div class="form-subtitle">Kişisel Bilgileriniz</div>
+          <div class="form-item-container">
+            <div class="col-2">
+              <div class="form-item">
+                <label> <span>*</span> E-posta </label>
+                <input
+                  class="validate-item email"
+                  data-error="Lütfen geçerli bir e-posta adresi giriniz."
+                  id="Email"
+                  name="Email"
+                  type="text"
+                  value=""
+                  v-model="form.email"
+                />
+              </div>
             </div>
-            <datalist id="email-list"></datalist>
-            <div class="password-wrapper">
-                <div class="password">
-                    <div class="q-input-wrapper">
-                        <label class="q-label">Şifre</label
-                        ><input
-                        id="register-password-input"
-                        autocomplete="new-password"
-                        class="q-input"
-                        data-testid="password-input"
-                        name="register-password"
-                        :type="showPassword ? 'text' : 'password'"
-                        v-model="form.password"
-                    />
-                    </div>
-                    <i @click="showPassword = !showPassword" :class="showPassword ? 'i-eye-close' : 'i-eye-open'"></i>
-                </div>
-                <p class="q-typography q-paragraph q-initial dark-gray">
-                    Şifreniz en az 7 karakter olmalı, harf ve rakam içermelidir.
-                </p>
+            <div class="col-2">
+              <div class="form-item password-hide">
+                <label> <span>*</span> Şifre </label>
+                <input
+                  class="validate-item password"
+                  data-error="Bu alan zorunludur."
+                  id="Password"
+                  minlengthattr="6"
+                  name="Password"
+                  :type="showPassword ? 'text' : 'password'"
+                  v-model="form.password"
+                />
+                <span class="password-hint"></span>
+              </div>
             </div>
-            <div class="gender flex flex-column">
-                <label>Cinsiyet (Opsiyonel)</label>
-                <div class="button-group flex">
-                    <button
-                        class="q-gray q-fluid q-button-medium q-button female" :class="form.gender === 'kadin' ? 'active q-secondary' : 'border-right-none'"
-                        type="button" @click="setGender('kadin')"
-                    >
-                        <span>Kadın</span></button
-                    >
-                    <button
-                        class="q-gray q-fluid q-button-medium q-button male" :class="form.gender === 'erkek' ? 'active q-secondary' : 'border-left-none'"
-                        type="button" @click="setGender('erkek')"
-                    >
-                        <span>Erkek</span>
-                    </button>
-                </div>
-            </div>
-            <div class="marketing-checkbox">
-                <div class="q-checkbox-wrapper">
-                    <input
-                        id="checkbox-true"
-                        class="q-input"
-                        data-testid="marketing-checkbox"
-                        name="marketing-email"
-                        type="checkbox" />
-                    <label class="q-label" for="checkbox-true">
-                    <p class="q-typography q-body q-inline black">
-                        Kampanyalardan haberdar olmak için elektronik ileti almak istiyorum.
-                    </p>
-                    </label>
-                </div>
-            </div>
-            <button
-                class="q-primary q-fluid q-button-medium q-button submit"
-                data-testid="submit-button"
-                type="submit"
-            >
-                <span>Üye Ol</span>
-            </button>
-            <div class="contract flex">
-                <p>
-                    Üye Ol’a basarak&nbsp;<b>Üyelik Koşulları</b>’nı ve&nbsp;<b
-                >Kişisel Verilerin Korunması Metni</b
-                >’ni kabul ediyorum.
-                </p>
-            </div>
-        </form>
-    </div>
 
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+          </div>
+
+          <div class="form-item form-item-button form-item-button-with-border">
+            <div class="aggrements form-mini-checkbox">
+              <div class="form-item">
+                <input
+                  class="validate-item"
+                  data-val="true"
+                  data-val-required="AcceptUserAggrement alanı gereklidir."
+                  id="AcceptUserAggrement"
+                  name="AcceptUserAggrement"
+                  type="checkbox"
+                  value="true"
+                /><input
+                  name="AcceptUserAggrement"
+                  type="hidden"
+                  value="false"
+                />
+                <label for="AcceptUserAggrement"
+                  ><a href="javascript:void(0)">Üyelik sözleşmesi</a>ni okudum
+                  ve kabul ediyorum.</label
+                >
+              </div>
+              <div class="form-item">
+                <input
+                  checked="checked"
+                  data-val="true"
+                  data-val-required="AllowCommunicationSms alanı gereklidir."
+                  id="AllowCommunicationSms"
+                  name="AllowCommunicationSms"
+                  type="checkbox"
+                  value="true"
+                /><input
+                  name="AllowCommunicationSms"
+                  type="hidden"
+                  value="false"
+                />
+                <label for="AllowCommunicationSms"
+                  >SMS ile iletişime izin veriyorum.</label
+                >
+              </div>
+              <div class="form-item">
+                <input
+                  checked="checked"
+                  data-val="true"
+                  data-val-required="AllowCommunicationEmail alanı gereklidir."
+                  id="AllowCommunicationEmail"
+                  name="AllowCommunicationEmail"
+                  type="checkbox"
+                  value="true"
+                /><input
+                  name="AllowCommunicationEmail"
+                  type="hidden"
+                  value="false"
+                />
+                <label for="AllowCommunicationEmail"
+                  >E-posta ile iletişime izin veriyorum.</label
+                >
+              </div>
+            </div>
+            <a href="javascript:void(0)" class="button red submit-button">
+              <span> ÜYE OL </span>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
-    name: "Register",
-    data: () => {
-        return {
-          form: {
-            email: '',
-            password: '',
-            gender: 'erkek'
-          },
-          showPassword: false
-        };
-    },
-    methods: {
-      register(e) {
-        e.preventDefault();
-        this.$store.dispatch('account/registerWithEmailAndPassword', {email: this.form.email, password: this.form.password, gender: this.form.gender});
+  name: "Register",
+  data: () => {
+    return {
+      form: {
+        email: "",
+        password: "",
+        
       },
-      setGender(gender){
-        this.form.gender = gender;
-      }
-    }
-}
+      showPassword: false,
+    };
+  },
+  methods: {
+    register(e) {
+      e.preventDefault();
+      this.$store.dispatch("account/registerWithEmailAndPassword", {
+        email: this.form.email,
+        password: this.form.password,
+      });
+    },
+  },
+};
 </script>
-
-<style>
-#login-password-input {
-    height: 44px !important;
-}
-
-#login-register * {
-    box-sizing: border-box !important;
-}
-
-.lr-container {
-    border: 1px solid #e6e6e6;
-    border-top: 0;
-    padding: 40px;
-    padding-top: 37px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
-
-</style>

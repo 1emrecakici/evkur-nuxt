@@ -1,54 +1,55 @@
 <template>
-  <div class="q-layout login">
-    <form @submit="login">
-      <div class="q-input-wrapper email-input">
-        <label class="q-label">E-Posta</label
-        ><input
-          class="q-input"
-          type="text"
-          id="login-email"
-          list="email-list"
-          name="login email"
-          autocomplete="username"
-          data-testid="email-input"
-          v-model="form.email"
-        />
+  <div class="col-2 background-form-left">
+    <div class="form-title">Üye Girişi</div>
+    <div class="form-item">
+      <label> E-posta </label>
+      <input
+        class="validate-item email valid"
+        data-error="Lütfen geçerli bir e-posta adresi giriniz."
+        id="Email"
+        name="Email"
+        type="text"
+        value=""
+        aria-invalid="false"
+        v-model="form.email"
+      />
+    </div>
+    <div class="form-item">
+      <label> Şifre </label>
+      <input
+        class="validate-item valid"
+        data-error="Bu alan zorunludur."
+        id="Password"
+        name="Password"
+        aria-invalid="false"
+        :type="showPassword ? 'text' : 'password'"
+        v-model="form.password"
+      />
+    </div>
+    <div class="form-item">
+      <div class="form-mini-checkbox">
+        <input
+          data-val="true"
+          data-val-required="RememberMe alanı gereklidir."
+          id="remember-me"
+          name="RememberMe"
+          type="checkbox"
+          value="true"
+        /><input name="RememberMe" type="hidden" value="false" />
+
+        <label for="remember-me">Beni Hatırla</label>
       </div>
-      <datalist id="email-list"></datalist>
-      <div class="password-wrapper">
-        <div class="password">
-          <div class="q-input-wrapper">
-            <label class="q-label">Şifre</label>
-            <input
-              class="q-input"
-              :type="showPassword ? 'text' : 'password'"
-              name="login-password"
-              id="login-password-input"
-              data-testid="password-input"
-              autocomplete="current-password"
-              v-model="form.password"
-            />
-          </div>
-          <i
-            @click="showPassword = !showPassword"
-            :class="showPassword ? 'i-eye-close' : 'i-eye-open'"
-          ></i>
-        </div>
-      </div>
-      <div class="forgot-password">
-        <a><span>Şifremi Unuttum</span></a>
-      </div>
-      <button
-        class="q-primary q-fluid q-button-medium q-button submit"
-        type="submit"
-        @click="login"
-      >
-        <span>Giriş Yap</span>
-      </button>
-    </form>
+      <a href="/sifremi-unuttum" class="forget-password-link">
+        Yeni Şifre Al / Şifremi Unuttum
+      </a>
+    </div>
+    <div class="form-item form-item-button form-item-button-full-width">
+      <a @click="login" class="button red submit-button">
+        <span> GİRİŞ YAP </span>
+      </a>
+    </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "Login",
@@ -72,9 +73,3 @@ export default {
   },
 };
 </script>
-
-<style>
-#login-password-input {
-  height: 44px !important;
-}
-</style>
