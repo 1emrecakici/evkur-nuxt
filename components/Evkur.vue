@@ -138,9 +138,7 @@
                         data-click-tracker="true"
                         data-is-changing="true"
                         goal-name="tv click"
-                      >
-
-                      </div>
+                      ></div>
                     </div>
                   </li>
                   <li class="ins-top-search-menu-item">
@@ -164,9 +162,7 @@
                         data-click-tracker="true"
                         data-is-changing="true"
                         goal-name="k.ev-alet click"
-                      >
-
-                      </div>
+                      ></div>
                     </div>
                   </li>
                   <li class="ins-top-search-menu-item">
@@ -190,9 +186,7 @@
                         data-click-tracker="true"
                         data-is-changing="true"
                         goal-name="mobilya click"
-                      >
-
-                      </div>
+                      ></div>
                     </div>
                   </li>
                 </ul>
@@ -207,7 +201,7 @@
     <div class="buttons ins-header-button-wrapper-c122">
       <nuxt-link to="/girisyap" class="button with-border with-icon">
         <img src="../assets/user-icon.png" />
-        <span>GİRİŞ YAP / ÜYE OL</span>
+        <span >{{ isLogin ? "Giriş yap" : "Hesabım" }}</span>
       </nuxt-link>
 
       <nuxt-link
@@ -215,36 +209,50 @@
         class="button red with-icon mini-shopping-cart sp-goal-332-c94-67-1584621197735"
       >
         <img class="desktop" src="../assets/shopping-cart-icon.png" />
-        <span>SEPETİM {{ totalBasketItemCount > 0 ? "("+totalBasketItemCount+")" : "" }}</span>
+        <span
+          >SEPETİM
+          {{
+            totalBasketItemCount > 0 ? '(' + totalBasketItemCount + ')' : ''
+          }}</span
+        >
       </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
+import Login from "@/components/Auth/Login";
+import Register from "@/components/Auth/Register";
 
 export default {
-  data: () => {
+
+
+  data: function () {
     return {
-
-    };
-  },
-  created() {
-
-  },
-  computed: {
-    basket(){
-      return this.$store.getters['basket/getBasketItems'];
-    },
-    totalBasketItemCount(){
-      let count = 0;
-      for (let i = 0; i< this.basket.length; i++) {
-        count += this.basket[i].count;
-      }
-      return count;
+      isLogin: true,
     }
   },
+  created() {},
+  computed: {
+    basket() {
+      return this.$store.getters['basket/getBasketItems']
+    },
+    totalBasketItemCount() {
+      let count = 0
+      for (let i = 0; i < this.basket.length; i++) {
+        count += this.basket[i].count
+      }
+      return count
+    },
+  },
   methods: {
-  }
+    login(e) {
+      e.preventDefault()
+      this.$store.dispatch('account/loginWithEmailAndPassword', {
+        email: this.form.email,
+        password: this.form.password,
+      })
+    },
+  },
 }
 </script>
