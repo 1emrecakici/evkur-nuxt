@@ -6,8 +6,8 @@
     <div class="logo">
       <nuxt-link to="/" title="Evkur">
         <h1>
-          <img src="../assets/logo.png" alt="Evkur" />
-        </h1>
+          <img src="image1" alt="Evkur" />
+        </h1> 
       </nuxt-link>
     </div>
     <div class="search">
@@ -234,8 +234,15 @@ export default {
   },
   created() {},
   computed: {
+    product(){
+      return this.$store.getters['product/getProduct'];
+    },
     basket() {
+      
       return this.$store.getters['basket/getBasketItems']
+      const id = this.$route.params.id;
+    this.$store.dispatch("product/initData");
+    this.$store.dispatch("product/setProduct", parseInt(id));
     },
     totalBasketItemCount() {
       let count = 0
@@ -255,4 +262,5 @@ export default {
     },
   },
 }
+
 </script>
